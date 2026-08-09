@@ -640,6 +640,25 @@ section img {
 
 .main-results-table-wrap {
     margin-top: 30px;
+    overflow-x: hidden;
+}
+
+.main-results-table-wrap .result-table {
+    min-width: 0;
+    table-layout: fixed;
+    font-size: clamp(0.58rem, 0.82vw, 0.8rem);
+}
+
+.main-results-table-wrap .result-table th,
+.main-results-table-wrap .result-table td {
+    padding: 9px 3px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.main-results-table-wrap .result-table th:first-child,
+.main-results-table-wrap .result-table td:first-child {
+    width: 11.5%;
 }
 
 .table-note {
