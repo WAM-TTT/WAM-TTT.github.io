@@ -38,7 +38,7 @@
             </a>
             <a href="#demos" class="btn">
                 <span class="icon"><i class="fas fa-play"></i></span>
-                <span>Videos (Coming Soon)</span>
+                <span>Videos</span>
             </a>
         </div>
 
@@ -78,33 +78,61 @@
             </div>
         </section>
 
-        <!-- Test-Time Adaptation Videos -->
+        <!-- Featured Human-to-Robot Video Pairs -->
         <section id="dino">
-            <h2>Test-Time Human-Video Adaptation</h2>
-            <p style="margin-top: 20px; text-align: justify;">
-                At test time, a small batch of action-free human videos updates only the video-side fast weights using video prediction and key-value memory reconstruction. The adapted weights are then fixed throughout the robot rollout and can be reused without extending the model's context window.
+            <h2>Representative Human-to-Robot Steering</h2>
+            <p class="section-intro">
+                Each task is shown with two separate videos: an unlabeled human demonstration used for test-time training and the corresponding robot execution after adaptation. The three representative cases below highlight cross-embodiment transfer, dexterous rearrangement, and long-horizon manipulation.
             </p>
-            <div class="video-grid video-grid-row">
-                <div class="video-item">
-                    <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                    <div class="video-column-caption"><span>Human demo</span><span>TTT memory</span><span>Robot rollout</span></div>
-                    <div class="video-caption">Transfer Bottle</div>
-                </div>
-                <div class="video-item">
-                    <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                    <div class="video-column-caption"><span>Human demo</span><span>TTT memory</span><span>Robot rollout</span></div>
-                    <div class="video-caption">Table Bussing</div>
-                </div>
-                <div class="video-item">
-                    <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                    <div class="video-column-caption"><span>Human demo</span><span>TTT memory</span><span>Robot rollout</span></div>
-                    <div class="video-caption">Deliver Drink</div>
-                </div>
-                <div class="video-item">
-                    <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                    <div class="video-column-caption"><span>Human demo</span><span>TTT memory</span><span>Robot rollout</span></div>
-                    <div class="video-caption">Swap Place</div>
-                </div>
+            <div class="paired-task-list featured-task-list">
+                <article class="paired-task-card featured-task-card">
+                    <div class="paired-task-header">
+                        <h3>Table Bussing</h3>
+                        <span class="embodiment-tag">Humanoid</span>
+                    </div>
+                    <div class="paired-video-grid">
+                        <div class="paired-video-column">
+                            <div class="paired-video-label">Unlabeled Human Video</div>
+                            <div class="video-placeholder-card" role="img" aria-label="Table Bussing human video coming soon"><i class="fas fa-user"></i><span>Human Video Coming Soon</span></div>
+                        </div>
+                        <div class="paired-video-column">
+                            <div class="paired-video-label">WAM-TTT Robot Execution</div>
+                            <div class="video-placeholder-card" role="img" aria-label="Table Bussing robot video coming soon"><i class="fas fa-robot"></i><span>Robot Video Coming Soon</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="paired-task-card featured-task-card">
+                    <div class="paired-task-header">
+                        <h3>Swap Place</h3>
+                        <span class="embodiment-tag">Bimanual Dexterous</span>
+                    </div>
+                    <div class="paired-video-grid">
+                        <div class="paired-video-column">
+                            <div class="paired-video-label">Unlabeled Human Video</div>
+                            <div class="video-placeholder-card" role="img" aria-label="Swap Place human video coming soon"><i class="fas fa-user"></i><span>Human Video Coming Soon</span></div>
+                        </div>
+                        <div class="paired-video-column">
+                            <div class="paired-video-label">WAM-TTT Robot Execution</div>
+                            <div class="video-placeholder-card" role="img" aria-label="Swap Place robot video coming soon"><i class="fas fa-robot"></i><span>Robot Video Coming Soon</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="paired-task-card featured-task-card">
+                    <div class="paired-task-header">
+                        <h3>Multi-step Steak</h3>
+                        <span class="embodiment-tag">Bimanual Dexterous</span>
+                    </div>
+                    <div class="paired-video-grid">
+                        <div class="paired-video-column">
+                            <div class="paired-video-label">Unlabeled Human Video</div>
+                            <div class="video-placeholder-card" role="img" aria-label="Multi-step Steak human video coming soon"><i class="fas fa-user"></i><span>Human Video Coming Soon</span></div>
+                        </div>
+                        <div class="paired-video-column">
+                            <div class="paired-video-label">WAM-TTT Robot Execution</div>
+                            <div class="video-placeholder-card" role="img" aria-label="Multi-step Steak robot video coming soon"><i class="fas fa-robot"></i><span>Robot Video Coming Soon</span></div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -215,67 +243,106 @@
             <p class="table-note">Progress (%) in previously unseen household environments. Each task result is averaged over 25 trials.</p>
         </section>
 
-        <!-- Real-World Demonstrations -->
+        <!-- Full Benchmark Video Coverage -->
         <section id="demos">
-            <h2>Real-World Demonstrations</h2>
+            <h2>Full Benchmark Coverage</h2>
+            <p class="section-intro">
+                The remaining six tasks complete the nine-task benchmark. Human demonstrations and robot executions stay as independent videos so their timing, viewpoints, and full trajectories remain easy to inspect.
+            </p>
 
             <div class="video-section">
                 <h3>Humanoid Manipulation</h3>
-                <div class="video-grid-featured">
-                    <div class="row-first-full">
-                        <div class="video-item">
-                            <div class="video-placeholder-card video-placeholder-wide"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                            <div class="video-caption">Table Bussing</div>
+                <div class="paired-task-list benchmark-task-list">
+                    <article class="paired-task-card">
+                        <div class="paired-task-header"><h3>Deliver Drink</h3></div>
+                        <div class="paired-video-grid">
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">Unlabeled Human Video</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Deliver Drink human video coming soon"><i class="fas fa-user"></i><span>Human Video Coming Soon</span></div>
+                            </div>
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">WAM-TTT Robot Execution</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Deliver Drink robot video coming soon"><i class="fas fa-robot"></i><span>Robot Video Coming Soon</span></div>
+                            </div>
                         </div>
-                        <div class="video-item">
-                            <div class="video-placeholder-card video-placeholder-wide"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                            <div class="video-caption">Deliver Drink</div>
+                    </article>
+                    <article class="paired-task-card">
+                        <div class="paired-task-header"><h3>Pour Water</h3></div>
+                        <div class="paired-video-grid">
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">Unlabeled Human Video</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Pour Water human video coming soon"><i class="fas fa-user"></i><span>Human Video Coming Soon</span></div>
+                            </div>
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">WAM-TTT Robot Execution</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Pour Water robot video coming soon"><i class="fas fa-robot"></i><span>Robot Video Coming Soon</span></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row-center">
-                        <div class="video-item">
-                            <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                            <div class="video-caption">Pour Water</div>
-                        </div>
-                    </div>
+                    </article>
                 </div>
             </div>
 
             <div class="video-section">
                 <h3>Bimanual Gripper Manipulation</h3>
-                <div class="video-grid-featured">
-                    <div class="row-center">
-                        <div class="video-item">
-                            <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                            <div class="video-caption">Transfer Bottle</div>
+                <div class="paired-task-list benchmark-task-list">
+                    <article class="paired-task-card">
+                        <div class="paired-task-header"><h3>Transfer Bottle</h3></div>
+                        <div class="paired-video-grid">
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">Unlabeled Human Video</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Transfer Bottle human video coming soon"><i class="fas fa-user"></i><span>Human Video Coming Soon</span></div>
+                            </div>
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">WAM-TTT Robot Execution</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Transfer Bottle robot video coming soon"><i class="fas fa-robot"></i><span>Robot Video Coming Soon</span></div>
+                            </div>
                         </div>
-                        <div class="video-item">
-                            <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                            <div class="video-caption">Stamp Paper</div>
+                    </article>
+                    <article class="paired-task-card">
+                        <div class="paired-task-header"><h3>Stamp Paper</h3></div>
+                        <div class="paired-video-grid">
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">Unlabeled Human Video</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Stamp Paper human video coming soon"><i class="fas fa-user"></i><span>Human Video Coming Soon</span></div>
+                            </div>
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">WAM-TTT Robot Execution</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Stamp Paper robot video coming soon"><i class="fas fa-robot"></i><span>Robot Video Coming Soon</span></div>
+                            </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
 
             <div class="video-section">
                 <h3>Bimanual Dexterous Manipulation</h3>
-                <div class="video-grid">
-                    <div class="video-item">
-                        <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                        <div class="video-caption">Swap Place</div>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                        <div class="video-caption">Pyramid Stacking</div>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                        <div class="video-caption">Flip Steak</div>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-placeholder-card"><i class="fas fa-play"></i><span>Video Coming Soon</span></div>
-                        <div class="video-caption">Multi-step Steak</div>
-                    </div>
+                <div class="paired-task-list benchmark-task-list">
+                    <article class="paired-task-card">
+                        <div class="paired-task-header"><h3>Pyramid Stacking</h3></div>
+                        <div class="paired-video-grid">
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">Unlabeled Human Video</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Pyramid Stacking human video coming soon"><i class="fas fa-user"></i><span>Human Video Coming Soon</span></div>
+                            </div>
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">WAM-TTT Robot Execution</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Pyramid Stacking robot video coming soon"><i class="fas fa-robot"></i><span>Robot Video Coming Soon</span></div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="paired-task-card">
+                        <div class="paired-task-header"><h3>Flip Steak</h3></div>
+                        <div class="paired-video-grid">
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">Unlabeled Human Video</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Flip Steak human video coming soon"><i class="fas fa-user"></i><span>Human Video Coming Soon</span></div>
+                            </div>
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">WAM-TTT Robot Execution</div>
+                                <div class="video-placeholder-card" role="img" aria-label="Flip Steak robot video coming soon"><i class="fas fa-robot"></i><span>Robot Video Coming Soon</span></div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
 
