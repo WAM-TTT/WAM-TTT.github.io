@@ -155,64 +155,6 @@ h1 .title-project {
     pointer-events: none;
 }
 
-/* Promotional Video */
-#promo-video {
-    max-width: 920px;
-    margin: 24px auto 22px;
-}
-
-.youtube-embed {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: #111;
-}
-
-.youtube-embed iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-}
-
-.youtube-embed video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: #000;
-}
-
-.video-placeholder-hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-    background: linear-gradient(135deg, #111 0%, #20252c 100%);
-}
-
-.video-placeholder-hero > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-.video-placeholder-hero i {
-    font-size: 3em;
-    opacity: 0.85;
-}
-
-.video-placeholder-hero strong {
-    font-size: 1.35em;
-}
-
-.video-placeholder-hero span {
-    color: #c9ced6;
-    font-size: 0.95em;
-}
-
 /* Sections */
 section {
     margin: 22px 0;
