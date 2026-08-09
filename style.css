@@ -582,6 +582,15 @@ section img {
     min-width: 0;
 }
 
+.paired-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border-radius: 8px;
+    background: #000;
+    object-fit: contain;
+}
+
 .paired-video-label {
     margin-bottom: 8px;
     color: #4b5563;
