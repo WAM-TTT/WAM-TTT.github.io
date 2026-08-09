@@ -58,53 +58,6 @@ h1 .title-project {
     font-weight: 700;
 }
 
-/* Navigation Buttons */
-.nav-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 2px 0 4px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    font-size: 0.9em;
-    background: #000 !important;
-    background-color: #000 !important;
-    border: none;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 500;
-    transition: all 0.3s;
-    box-shadow: none;
-}
-
-.btn .icon {
-    display: inline-flex;
-    align-items: center;
-    font-size: 1em;
-}
-
-.btn:hover {
-    background: #000 !important;
-    background-color: #000 !important;
-    box-shadow: none;
-    transform: translateY(-1px);
-}
-
-.btn.disabled {
-    background: #000 !important;
-    background-color: #000 !important;
-    opacity: 0.7;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
 /* Sections */
 section {
     margin: 22px 0;
@@ -849,11 +802,6 @@ footer {
 
     .video-grid {
         grid-template-columns: 1fr;
-    }
-
-    .nav-buttons {
-        flex-direction: column;
-        align-items: center;
     }
 
 }
