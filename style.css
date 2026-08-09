@@ -293,10 +293,11 @@ section img {
     border-radius: 8px;
 }
 
-/* Make model and dataset sections equal height without whitespace */
+/* Stack the two method figures vertically at full width */
 #model-dataset .two-column-grid {
-    align-items: stretch;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 36px;
 }
 
 #model-dataset .column-item {
@@ -313,9 +314,9 @@ section img {
 #model-dataset .column-item img {
     width: 100%;
     max-width: 100%;
-    height: 280px;
+    height: auto;
     border-radius: 8px;
-    margin: 4px 0 10px 0;
+    margin: 8px 0 12px 0;
     display: block;
     flex-shrink: 0;
     object-fit: contain;
@@ -325,8 +326,8 @@ section img {
 #model-dataset .column-item p {
     line-height: 1.5;
     text-align: justify;
-    flex: 1 1 auto;
-    min-height: 6.5em;
+    flex: 0 1 auto;
+    min-height: 0;
 }
 
 @media (max-width: 1024px) {
