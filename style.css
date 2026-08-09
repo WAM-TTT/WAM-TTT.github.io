@@ -37,10 +37,9 @@ h1 .title-project {
     font-weight: 700;
     font-style: italic;
     font-size: 1em;
-    transform: scaleX(1.12);
-    transform-origin: left center;
     display: inline-block;
-    margin-right: 0.12em;
+    margin-right: 0.08em;
+    letter-spacing: 0.01em;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15);
     color: #2c2c2c;
 }
