@@ -44,55 +44,6 @@ h1 .title-project {
     color: #2c2c2c;
 }
 
-.authors {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    line-height: 1.45;
-    color: #333;
-}
-
-.authors .author-name {
-    color: #2563eb;
-}
-
-.authors a.author-name {
-    text-decoration: none;
-}
-
-.authors a.author-name:hover {
-    text-decoration: underline;
-}
-
-.authors sup {
-    color: #333;
-}
-
-.author {
-    display: inline;
-    margin-right: 8px;
-}
-
-.author::after {
-    content: ", ";
-}
-
-.author:last-child::after {
-    content: "";
-}
-
-.affiliations {
-    font-size: 0.95em;
-    color: #666;
-    margin-top: 6px;
-    margin-bottom: 8px;
-    line-height: 1.1;
-}
-
-.affiliation {
-    display: block;
-    margin: 0px 0;
-}
-
 .rss-venue {
     margin: 20px 0 12px;
     color: #7a828d;
