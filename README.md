@@ -1,3 +1,3 @@
 # WAM-TTT
 
-Anonymous rebuttal project page containing technical content and experimental results only.
+Project page for WAM-TTT, presenting the method and experimental results.
