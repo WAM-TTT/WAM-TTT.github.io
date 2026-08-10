@@ -51,8 +51,24 @@
                 <div class="column-item">
                     <h3>Human-Robot Meta-Training</h3>
                     <p>
-                        Meta-training uses 2,286 paired human and robot episodes over nine manipulation tasks. A key-value memory reconstruction objective aligns human visual cues with robot queries, while normalized phase alignment synchronizes the two views without pose or action labels on the human side.
+                        Meta-training uses 2,286 paired human and robot episodes over nine manipulation tasks. A key-value memory reconstruction objective trains the fast-weight memory from paired visual observations without pose or action labels on the human side.
                     </p>
+                    <div class="motion-pattern-evidence">
+                        <h4>Robot-Guided Human Demonstrations</h4>
+                        <p class="motion-pattern-evidence-copy">
+                            For tasks in which human and robot embodiments naturally admit different solutions, the human demonstration is collected to reproduce the robot's task-level interaction pattern. The Cook Rice example shows the RGB motion comparison and the corresponding DINOv3 feature maps, illustrating how both demonstrations follow the same task strategy.
+                        </p>
+                        <div class="paired-video-grid">
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">Human and Robot Motion Comparison</div>
+                                <video class="paired-video" controls playsinline preload="metadata" aria-label="Cook Rice human and robot motion comparison"><source src="/videos/analysis/cook_rice_motion_comparison.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                            </div>
+                            <div class="paired-video-column">
+                                <div class="paired-video-label">DINOv3 Feature Visualization</div>
+                                <video class="paired-video" controls playsinline preload="metadata" aria-label="DINOv3 feature visualization of Cook Rice human and robot motions"><source src="/videos/analysis/cook_rice_dinov3_features.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

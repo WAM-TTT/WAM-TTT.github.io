@@ -283,6 +283,25 @@ section img {
     min-height: 0;
 }
 
+.motion-pattern-evidence {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #dfe6ee;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.motion-pattern-evidence h4 {
+    margin: 0 0 10px;
+    color: #26374a;
+    font-size: 1.15em;
+    text-align: left;
+}
+
+#model-dataset .motion-pattern-evidence-copy {
+    margin: 0 0 18px;
+}
+
 @media (max-width: 1024px) {
     .two-column-grid {
         grid-template-columns: 1fr;
