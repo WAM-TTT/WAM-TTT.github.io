@@ -702,7 +702,7 @@ section img {
 .main-results-table-wrap .result-table {
     min-width: 0;
     table-layout: fixed;
-    font-size: clamp(0.58rem, 0.82vw, 0.8rem);
+    font-size: clamp(0.68rem, 1vw, 0.9rem);
 }
 
 .main-results-table-wrap .result-table th,
