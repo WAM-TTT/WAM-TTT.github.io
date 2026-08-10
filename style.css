@@ -728,7 +728,7 @@ section img {
     vertical-align: middle;
 }
 
-.full-results-table .setting-cell {
+.full-results-table tbody td.setting-cell {
     text-align: center;
     font-weight: 400;
 }
