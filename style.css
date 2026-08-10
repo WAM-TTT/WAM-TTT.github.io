@@ -283,8 +283,13 @@ section img {
     min-height: 0;
 }
 
-#model-dataset .motion-pattern-copy {
-    margin: 30px 0 28px;
+#motion-pattern-analysis {
+    margin-top: 40px;
+}
+
+#motion-pattern-analysis .motion-pattern-copy {
+    margin: 0 0 28px;
+    text-align: justify;
 }
 
 .motion-pattern-grid {

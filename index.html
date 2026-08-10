@@ -53,19 +53,6 @@
                     <p>
                         Meta-training uses 2,286 paired human and robot episodes over nine manipulation tasks. A key-value memory reconstruction objective trains the fast-weight memory from paired visual observations without pose or action labels on the human side.
                     </p>
-                    <p class="motion-pattern-copy">
-                        For tasks in which human and robot embodiments naturally admit different solutions, the human demonstration is collected to reproduce the robot's task-level interaction pattern. The Cook Rice example shows the RGB motion comparison and the corresponding DINOv3 feature maps, illustrating how both demonstrations follow the same task strategy.
-                    </p>
-                    <div class="paired-video-grid motion-pattern-grid">
-                        <div class="paired-video-column">
-                            <div class="paired-video-label">Human and Robot Motion Comparison</div>
-                            <video class="paired-video" controls playsinline preload="metadata" aria-label="Cook Rice human and robot motion comparison"><source src="/videos/analysis/cook_rice_motion_comparison.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
-                        </div>
-                        <div class="paired-video-column">
-                            <div class="paired-video-label">DINOv3 Feature Visualization</div>
-                            <video class="paired-video" controls playsinline preload="metadata" aria-label="DINOv3 feature visualization of Cook Rice human and robot motions"><source src="/videos/analysis/cook_rice_dinov3_features.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -371,6 +358,22 @@
                 <p>
                     The primary benchmark contains nine manipulation tasks across three embodiments. Each task is evaluated in a standardized setting and a previously unseen household setting. The unseen setting jointly changes lighting, table height, object instances, and surrounding appearance. Progress is measured with task-specific partial credit over 25 trials per task and setting.
                 </p>
+            </div>
+        </section>
+
+        <section id="motion-pattern-analysis">
+            <p class="motion-pattern-copy">
+                For tasks in which human and robot embodiments naturally admit different solutions, the human demonstration is collected to reproduce the robot's task-level interaction pattern. The Cook Rice example shows the RGB motion comparison and the corresponding DINOv3 feature maps, illustrating how both demonstrations follow the same task strategy.
+            </p>
+            <div class="paired-video-grid motion-pattern-grid">
+                <div class="paired-video-column">
+                    <div class="paired-video-label">Human and Robot Motion Comparison</div>
+                    <video class="paired-video" controls playsinline preload="metadata" aria-label="Cook Rice human and robot motion comparison"><source src="/videos/analysis/cook_rice_motion_comparison.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                </div>
+                <div class="paired-video-column">
+                    <div class="paired-video-label">DINOv3 Feature Visualization</div>
+                    <video class="paired-video" controls playsinline preload="metadata" aria-label="DINOv3 feature visualization of Cook Rice human and robot motions"><source src="/videos/analysis/cook_rice_dinov3_features.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                </div>
             </div>
         </section>
 
