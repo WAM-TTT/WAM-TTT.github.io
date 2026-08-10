@@ -712,9 +712,25 @@ section img {
     overflow-wrap: anywhere;
 }
 
-.main-results-table-wrap .result-table th:first-child,
-.main-results-table-wrap .result-table td:first-child {
-    width: 11.5%;
+.main-results-table-wrap .result-table th:first-child {
+    width: 9.5%;
+}
+
+.main-results-table-wrap .result-table th:nth-child(2) {
+    width: 6.5%;
+}
+
+.full-results-table tbody .method-start td {
+    border-top: 2px solid #d9dee5;
+}
+
+.full-results-table tbody td[rowspan] {
+    vertical-align: middle;
+}
+
+.full-results-table .setting-cell {
+    text-align: center;
+    font-weight: 400;
 }
 
 .table-note {
