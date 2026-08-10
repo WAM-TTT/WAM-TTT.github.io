@@ -284,11 +284,11 @@ section img {
 }
 
 #model-dataset .motion-pattern-copy {
-    margin: 24px 0 18px;
+    margin: 30px 0 28px;
 }
 
 .motion-pattern-grid {
-    margin-top: 4px;
+    margin-top: 0;
 }
 
 @media (max-width: 1024px) {
