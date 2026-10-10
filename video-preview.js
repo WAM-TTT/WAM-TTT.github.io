@@ -1,7 +1,11 @@
-function prepareVideo(video) {
-    if (video.getAttribute('preload') === 'metadata') return;
-    video.preload = 'metadata';
-    video.load();
+function prepareVideo(video, mode = 'metadata') {
+    const previous = video.getAttribute('preload');
+    if (previous === 'auto' || previous === mode) return;
+    video.preload = mode;
+    // Explicit preparation should not be delayed by native lazy-loading rules.
+    video.removeAttribute('loading');
+    // Upgrading to auto must retain the existing buffer and playback position.
+    if (previous === 'none') video.load();
 }
 
 // Warm up nearby videos, without letting the whole gallery compete for bandwidth.
@@ -12,7 +16,19 @@ const videoObserver = 'IntersectionObserver' in window
             prepareVideo(entry.target);
             videoObserver.unobserve(entry.target);
         });
-    }, { rootMargin: '400px 0px' })
+    }, { rootMargin: '1000px 0px' })
+    : null;
+
+// Buffer playable data before a video reaches the viewport, rather than waiting
+// for the click. Keep this smaller than the metadata region to limit contention.
+const bufferObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            prepareVideo(entry.target, 'auto');
+            bufferObserver.unobserve(entry.target);
+        });
+    }, { rootMargin: '300px 0px' })
     : null;
 
 document.querySelectorAll('video[poster]').forEach((video) => {
@@ -78,8 +94,10 @@ document.querySelectorAll('video[poster]').forEach((video) => {
         preview.classList.remove('is-starting');
     });
 
-    video.addEventListener('pointerdown', () => prepareVideo(video), { once: true });
-    video.addEventListener('keydown', () => prepareVideo(video), { once: true });
+    video.addEventListener('pointerenter', () => prepareVideo(video, 'auto'), { once: true });
+    video.addEventListener('pointerdown', () => prepareVideo(video, 'auto'), { once: true });
+    video.addEventListener('keydown', () => prepareVideo(video, 'auto'), { once: true });
     if (videoObserver) videoObserver.observe(video);
     else prepareVideo(video);
+    if (bufferObserver) bufferObserver.observe(video);
 });
