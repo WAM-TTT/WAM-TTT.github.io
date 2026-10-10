@@ -1,3 +1,20 @@
+function prepareVideo(video) {
+    if (video.getAttribute('preload') === 'metadata') return;
+    video.preload = 'metadata';
+    video.load();
+}
+
+// Warm up nearby videos, without letting the whole gallery compete for bandwidth.
+const videoObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            prepareVideo(entry.target);
+            videoObserver.unobserve(entry.target);
+        });
+    }, { rootMargin: '400px 0px' })
+    : null;
+
 document.querySelectorAll('video[poster]').forEach((video) => {
     const preview = document.createElement('div');
     preview.className = 'video-preview';
@@ -7,6 +24,7 @@ document.querySelectorAll('video[poster]').forEach((video) => {
     const poster = document.createElement('img');
     poster.className = 'video-startup-poster';
     poster.src = video.poster;
+    poster.loading = 'lazy';
     poster.alt = '';
     poster.setAttribute('aria-hidden', 'true');
     preview.append(poster);
@@ -59,4 +77,9 @@ document.querySelectorAll('video[poster]').forEach((video) => {
         framePresented = false;
         preview.classList.remove('is-starting');
     });
+
+    video.addEventListener('pointerdown', () => prepareVideo(video), { once: true });
+    video.addEventListener('keydown', () => prepareVideo(video), { once: true });
+    if (videoObserver) videoObserver.observe(video);
+    else prepareVideo(video);
 });
