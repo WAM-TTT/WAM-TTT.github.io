@@ -568,11 +568,13 @@ section img {
     border-radius: 8px;
 }
 
-.video-startup-poster {
+.video-preview > .video-startup-poster {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+    max-width: none;
+    margin: 0;
     object-fit: contain;
     border-radius: inherit;
     pointer-events: none;
