@@ -561,6 +561,30 @@ section img {
     aspect-ratio: 16 / 9;
 }
 
+/* Keep the poster above the video until its first frame is presented. */
+.video-preview {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-startup-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: inherit;
+    pointer-events: none;
+    /* Leave the native playback controls visible and usable. */
+    clip-path: inset(0 0 44px 0);
+    visibility: hidden;
+}
+
+.video-preview.is-starting .video-startup-poster {
+    visibility: visible;
+}
+
 .paired-video-label {
     margin-bottom: 8px;
     color: #4b5563;

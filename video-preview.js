@@ -1,0 +1,62 @@
+document.querySelectorAll('video[poster]').forEach((video) => {
+    const preview = document.createElement('div');
+    preview.className = 'video-preview';
+    video.before(preview);
+    preview.append(video);
+
+    const poster = document.createElement('img');
+    poster.className = 'video-startup-poster';
+    poster.src = video.poster;
+    poster.alt = '';
+    poster.setAttribute('aria-hidden', 'true');
+    preview.append(poster);
+
+    let framePresented = false;
+    let frameCallback = null;
+    let generation = 0;
+
+    function revealVideo() {
+        framePresented = true;
+        frameCallback = null;
+        preview.classList.remove('is-starting');
+    }
+
+    function waitForFirstFrame() {
+        if (framePresented) return;
+        preview.classList.add('is-starting');
+
+        if (video.requestVideoFrameCallback && frameCallback === null) {
+            const currentGeneration = generation;
+            frameCallback = video.requestVideoFrameCallback(() => {
+                if (currentGeneration === generation) revealVideo();
+            });
+        }
+    }
+
+    function revealWithoutFrameCallback() {
+        if (video.requestVideoFrameCallback || video.readyState < 2 ||
+            !preview.classList.contains('is-starting')) return;
+        const currentGeneration = generation;
+        // Let the browser paint the decoded frame before removing the cover.
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            if (currentGeneration === generation && video.readyState >= 2) {
+                revealVideo();
+            }
+        }));
+    }
+
+    video.addEventListener('play', waitForFirstFrame);
+    video.addEventListener('seeking', waitForFirstFrame);
+    video.addEventListener('playing', revealWithoutFrameCallback);
+    video.addEventListener('seeked', revealWithoutFrameCallback);
+    video.addEventListener('loadeddata', revealWithoutFrameCallback);
+    video.addEventListener('emptied', () => {
+        generation += 1;
+        if (frameCallback !== null && video.cancelVideoFrameCallback) {
+            video.cancelVideoFrameCallback(frameCallback);
+        }
+        frameCallback = null;
+        framePresented = false;
+        preview.classList.remove('is-starting');
+    });
+});
