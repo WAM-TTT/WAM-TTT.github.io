@@ -9,7 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Playfair+Display:wght@700&amp;family=Libre+Baskerville:wght@400;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=poster-alignment">
+    <link rel="preload" as="image" href="images/wam_overview.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="images/wam_pipeline.webp" fetchpriority="high">
+    <link rel="stylesheet" href="style.css?v=complete-images">
+    <script src="image-preview.js?v=1"></script>
     <script src="video-preview.js?v=3" defer></script>
 </head>
 <body>
@@ -25,7 +28,7 @@
 
         <!-- Teaser Image -->
         <section id="teaser">
-            <img src="images/wam_overview.png" alt="WAM-TTT overview: unlabeled human videos update fast weights in a frozen world-action model" style="width: 100%; border-radius: 10px; margin: 30px auto; display: block;">
+            <img src="images/wam_overview.webp" class="priority-image" width="3000" height="1385" loading="eager" decoding="async" fetchpriority="high" alt="WAM-TTT overview: unlabeled human videos update fast weights in a frozen world-action model" style="width: 100%; border-radius: 10px; margin: 30px auto; display: block;">
             <div style="font-size: 18.5px; line-height: 1.4; font-weight: 400; max-width: 1000px;">
                 <span style="font-weight:600;">WAM-TTT</span> steers a
                 <span style="font-style: italic;">pretrained world-action model</span>
@@ -44,7 +47,7 @@
             <div class="two-column-grid">
                 <div class="column-item">
                     <h3>Fast-Weight Memory for World-Action Models</h3>
-                    <img src="images/wam_pipeline.png" alt="WAM-TTT meta-training and test-time training pipeline">
+                    <img src="images/wam_pipeline.webp" class="priority-image" width="3000" height="1221" loading="eager" decoding="async" fetchpriority="high" alt="WAM-TTT meta-training and test-time training pipeline">
                     <p>
                         TTT residual branches are inserted into the WAM's video expert. During deployment, only the fast weights are updated. The video and action experts, slow projections, and pretrained action prior stay fixed, preventing the human-side update from overwriting the policy.
                     </p>

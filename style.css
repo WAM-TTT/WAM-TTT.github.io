@@ -841,3 +841,8 @@ footer {
     }
 
 }
+
+/* Reserve image space and reveal only the fully decoded figure. */
+.image-loading .priority-image:not(.is-decoded) {
+    visibility: hidden;
+}
