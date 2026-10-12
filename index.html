@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preload" as="image" href="images/wam_overview.webp" fetchpriority="high">
     <link rel="preload" as="image" href="images/wam_pipeline.webp" fetchpriority="high">
-    <link rel="stylesheet" href="style.css?v=complete-images">
+    <link rel="stylesheet" href="style.css?v=citation">
     <script src="image-preview.js?v=1"></script>
     <script src="video-preview.js?v=3" defer></script>
+    <script src="citation.js?v=1" defer></script>
 </head>
 <body>
     <div class="container">
@@ -401,7 +402,7 @@
         </section>
 
         <!-- Evaluation Protocol -->
-        <section id="citation">
+        <section id="evaluation-protocol">
             <div class="citation">
                 <h3>Evaluation Protocol</h3>
                 <p>
@@ -424,6 +425,20 @@
                     <video class="paired-video" controls playsinline preload="none" loading="lazy" aria-label="DINOv3 feature visualization of Cook Rice human and robot motions" poster="/images/posters/analysis/cook_rice_dinov3_features.jpg?v=first-frame"><source src="/videos/analysis/cook_rice_dinov3_features.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
                 </div>
             </div>
+        </section>
+
+        <section id="citation" class="citation-section" aria-labelledby="citation-heading">
+            <div class="citation-header">
+                <h2 id="citation-heading">Citation</h2>
+                <button id="copy-bibtex" class="copy-bibtex" type="button" aria-describedby="copy-status">Copy BibTeX</button>
+            </div>
+            <p class="citation-note">Anonymous project page. Author information will be added after review.</p>
+            <pre class="bibtex-block"><code id="bibtex-entry">@misc{wamttt2026,
+  title  = {{WAM-TTT}: Steering World-Action Models by Watching Human Play at Test Time},
+  author = {Anonymous},
+  year   = {2026}
+}</code></pre>
+            <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
         </section>
 
         <!-- Footer -->
