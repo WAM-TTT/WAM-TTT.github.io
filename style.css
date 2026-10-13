@@ -894,3 +894,19 @@ footer {
     .citation-section { margin-top: 40px; }
     .bibtex-block { padding: 18px; font-size: 13px; }
 }
+
+/* Author order and affiliation markers match the paper. */
+.paper-authors { margin: 26px auto 10px; font-size: 18px; line-height: 1.8; }
+.author-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 22px; }
+.paper-author { white-space: nowrap; }
+.paper-author sup { margin-left: 3px; font-size: 0.65em; }
+.equal-contributors { font-weight: 600; }
+.author-notes, .paper-affiliations { display: flex; justify-content: center; flex-wrap: wrap; }
+.author-notes { gap: 4px 22px; font-size: 14px; color: #666; margin: 10px 0 14px; }
+.paper-affiliations { gap: 6px 24px; font-size: 17px; }
+.paper-affiliations sup { font-size: 0.7em; }
+@media (max-width: 600px) {
+    .paper-authors { font-size: 16px; margin-top: 22px; }
+    .author-row { gap: 4px 14px; }
+    .paper-affiliations { font-size: 15px; gap: 6px 16px; }
+}
