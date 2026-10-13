@@ -884,8 +884,8 @@ footer {
     border-radius: 10px;
     background: #f8f9fa;
     overflow-x: auto;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
+    white-space: pre;
+    overflow-wrap: normal;
     font: 15px/1.75 ui-monospace, SFMono-Regular, Consolas, monospace;
     color: #333;
 }
