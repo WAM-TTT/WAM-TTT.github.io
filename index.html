@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preload" as="image" href="images/wam_overview.webp" fetchpriority="high">
     <link rel="preload" as="image" href="images/wam_pipeline.webp" fetchpriority="high">
-    <link rel="stylesheet" href="style.css?v=header-authors">
+    <link rel="stylesheet" href="style.css?v=rgb-prediction">
     <script src="image-preview.js?v=1"></script>
     <script src="video-preview.js?v=3" defer></script>
     <script src="citation.js?v=1" defer></script>
@@ -90,6 +90,29 @@
                         Meta-training uses 2,286 paired human and robot episodes over nine manipulation tasks. A key-value memory reconstruction objective trains the fast-weight memory from paired visual observations without pose or action labels on the human side.
                     </p>
                 </div>
+            </div>
+        </section>
+
+        <section id="video-prediction" aria-labelledby="prediction-heading">
+            <h2 id="prediction-heading">RGB Video Prediction</h2>
+            <p class="section-intro">DexsimWAM predicts future RGB observations on three separate robot recordings. Each video compares ground truth on the left with predictions on the right, with head and two wrist views on each side. Predictions are compared at their original target times, without a temporal shift.</p>
+            <p class="prediction-protocol">These examples use the meta-trained fast-weight initialization (W_init), without additional test-time adaptation. Predictions are conditioned on observed images and robot states; these are video predictions, rather than closed-loop robot executions.</p>
+            <div class="prediction-list">
+                <article class="paired-task-card prediction-card">
+                    <h3>Pyramid Stacking</h3>
+                    <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
+                    <video class="prediction-video" width="1536" height="312" controls playsinline preload="none" loading="lazy" aria-label="Pyramid Stacking DexsimWAM RGB prediction comparison" poster="/images/posters/prediction/pyramid_stacking.jpg"><source src="/videos/prediction/pyramid_stacking.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                </article>
+                <article class="paired-task-card prediction-card">
+                    <h3>Six-Cup Stacking</h3>
+                    <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
+                    <video class="prediction-video" width="1536" height="312" controls playsinline preload="none" loading="lazy" aria-label="Six-Cup Stacking DexsimWAM RGB prediction comparison" poster="/images/posters/prediction/cup_stacking.jpg"><source src="/videos/prediction/cup_stacking.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                </article>
+                <article class="paired-task-card prediction-card">
+                    <h3>Steak Manipulation</h3>
+                    <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
+                    <video class="prediction-video" width="1536" height="312" controls playsinline preload="none" loading="lazy" aria-label="Steak Manipulation DexsimWAM RGB prediction comparison" poster="/images/posters/prediction/steak.jpg"><source src="/videos/prediction/steak.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                </article>
             </div>
         </section>
 
