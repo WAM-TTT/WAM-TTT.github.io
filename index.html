@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preload" as="image" href="images/wam_overview.webp" fetchpriority="high">
     <link rel="preload" as="image" href="images/wam_pipeline.webp" fetchpriority="high">
-    <link rel="stylesheet" href="style.css?v=rgb-prediction">
+    <link rel="stylesheet" href="style.css?v=paper-terminology">
     <script src="image-preview.js?v=1"></script>
     <script src="video-preview.js?v=3" defer></script>
     <script src="citation.js?v=1" defer></script>
@@ -81,7 +81,7 @@
                     <h3>Fast-Weight Memory for World-Action Models</h3>
                     <img src="images/wam_pipeline.webp" class="priority-image" width="3000" height="1221" loading="eager" decoding="async" fetchpriority="high" alt="WAM-TTT meta-training and test-time training pipeline">
                     <p>
-                        TTT residual branches are inserted into the WAM's video expert. During deployment, only the fast weights are updated. The video and action experts, slow projections, and pretrained action prior stay fixed, preventing the human-side update from overwriting the policy.
+                        WAM-TTT builds on LDA, a pretrained world-action model. TTT residual branches are inserted into its video expert. During deployment, only the fast weights are updated. The video and action experts, slow projections, and pretrained action prior stay fixed, preventing the human-side update from overwriting the policy.
                     </p>
                 </div>
                 <div class="column-item">
@@ -94,24 +94,24 @@
         </section>
 
         <section id="video-prediction" aria-labelledby="prediction-heading">
-            <h2 id="prediction-heading">RGB Video Prediction</h2>
-            <p class="section-intro">DexsimWAM predicts future RGB observations on three separate robot recordings. Each video compares ground truth on the left with predictions on the right, with head and two wrist views on each side. Predictions are compared at their original target times, without a temporal shift.</p>
-            <p class="prediction-protocol">These examples use the meta-trained fast-weight initialization (W_init), without additional test-time adaptation. Predictions are conditioned on observed images and robot states; these are video predictions, rather than closed-loop robot executions.</p>
+            <h2 id="prediction-heading">Video Prediction with an Additional WAM Backbone</h2>
+            <p class="section-intro">We integrate the video-side TTT layers into a FastWAM-based implementation and compare short-window predictions conditioned on current robot observations with the corresponding ground-truth frames. Each window contains the current observation and eight predicted frames at 0.4 s intervals, spanning 3.2 s. Ground truth is shown on the left and prediction on the right, each with head-left, left-wrist, and right-wrist camera views.</p>
+            <p class="prediction-protocol">Pyramid Stacking corresponds to the task discussed in the paper’s additional-backbone evaluation. Nested Cup Stacking and Steak Cooking are supplementary prediction examples outside that evaluation. All three examples use the learned fast-weight initialization, without additional human-video adaptation, and retain the original prediction target times.</p>
             <div class="prediction-list">
                 <article class="paired-task-card prediction-card">
                     <h3>Pyramid Stacking</h3>
                     <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
-                    <video class="prediction-video" width="1536" height="312" controls playsinline preload="none" loading="lazy" aria-label="Pyramid Stacking DexsimWAM RGB prediction comparison" poster="/images/posters/prediction/pyramid_stacking.jpg"><source src="/videos/prediction/pyramid_stacking.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                    <video class="prediction-video" width="1536" height="256" controls playsinline preload="none" loading="lazy" aria-label="Pyramid Stacking FastWAM-based video prediction comparison" poster="/images/posters/prediction/pyramid_stacking.jpg?v=clean"><source src="/videos/prediction/pyramid_stacking.mp4?v=clean" type="video/mp4">Your browser does not support HTML5 video.</video>
                 </article>
                 <article class="paired-task-card prediction-card">
-                    <h3>Six-Cup Stacking</h3>
+                    <h3>Nested Cup Stacking</h3>
                     <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
-                    <video class="prediction-video" width="1536" height="312" controls playsinline preload="none" loading="lazy" aria-label="Six-Cup Stacking DexsimWAM RGB prediction comparison" poster="/images/posters/prediction/cup_stacking.jpg"><source src="/videos/prediction/cup_stacking.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                    <video class="prediction-video" width="1536" height="256" controls playsinline preload="none" loading="lazy" aria-label="Nested Cup Stacking FastWAM-based video prediction comparison" poster="/images/posters/prediction/cup_stacking.jpg?v=clean"><source src="/videos/prediction/cup_stacking.mp4?v=clean" type="video/mp4">Your browser does not support HTML5 video.</video>
                 </article>
                 <article class="paired-task-card prediction-card">
-                    <h3>Steak Manipulation</h3>
+                    <h3>Steak Cooking</h3>
                     <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
-                    <video class="prediction-video" width="1536" height="312" controls playsinline preload="none" loading="lazy" aria-label="Steak Manipulation DexsimWAM RGB prediction comparison" poster="/images/posters/prediction/steak.jpg"><source src="/videos/prediction/steak.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                    <video class="prediction-video" width="1536" height="256" controls playsinline preload="none" loading="lazy" aria-label="Steak Cooking FastWAM-based video prediction comparison" poster="/images/posters/prediction/steak.jpg?v=clean"><source src="/videos/prediction/steak.mp4?v=clean" type="video/mp4">Your browser does not support HTML5 video.</video>
                 </article>
             </div>
         </section>
@@ -126,7 +126,7 @@
                 <article class="paired-task-card featured-task-card">
                     <div class="paired-task-header">
                         <h3>Table Bussing</h3>
-                        <span class="embodiment-tag">Unitree</span>
+                        <span class="embodiment-tag">Unitree G1</span>
                     </div>
                     <div class="paired-video-grid">
                         <div class="paired-video-column">
@@ -142,7 +142,7 @@
                 <article class="paired-task-card featured-task-card">
                     <div class="paired-task-header">
                         <h3>Swap Place</h3>
-                        <span class="embodiment-tag">Bimanual Dexterous</span>
+                        <span class="embodiment-tag">Galbot sharpa</span>
                     </div>
                     <div class="paired-video-grid">
                         <div class="paired-video-column">
@@ -158,7 +158,7 @@
                 <article class="paired-task-card featured-task-card">
                     <div class="paired-task-header">
                         <h3>Multi-step Steak</h3>
-                        <span class="embodiment-tag">Bimanual Dexterous</span>
+                        <span class="embodiment-tag">Galbot sharpa</span>
                     </div>
                     <div class="paired-video-grid">
                         <div class="paired-video-column">
@@ -286,7 +286,7 @@
             </p>
 
             <div class="video-section">
-                <h3>Unitree Manipulation</h3>
+                <h3>Unitree G1 Manipulation</h3>
                 <div class="paired-task-list benchmark-task-list">
                     <article class="paired-task-card">
                         <div class="paired-task-header"><h3>Deliver Drink</h3></div>
@@ -318,7 +318,7 @@
             </div>
 
             <div class="video-section">
-                <h3>Bimanual Gripper Manipulation</h3>
+                <h3>Galbot gripper Manipulation</h3>
                 <div class="paired-task-list benchmark-task-list">
                     <article class="paired-task-card">
                         <div class="paired-task-header"><h3>Transfer Bottle</h3></div>
@@ -415,7 +415,7 @@
             </div>
 
             <div class="video-section">
-                <h3>Bimanual Dexterous Manipulation</h3>
+                <h3>Galbot sharpa Manipulation</h3>
                 <div class="paired-task-list benchmark-task-list">
                     <article class="paired-task-card">
                         <div class="paired-task-header"><h3>Pyramid Stacking</h3></div>
