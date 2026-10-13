@@ -96,7 +96,6 @@
         <section id="video-prediction" aria-labelledby="prediction-heading">
             <h2 id="prediction-heading">Video Prediction with an Additional WAM Backbone</h2>
             <p class="section-intro">We integrate the video-side TTT layers into a FastWAM-based implementation and compare short-window predictions conditioned on current robot observations with the corresponding ground-truth frames. Each window contains the current observation and eight predicted frames at 0.4 s intervals, spanning 3.2 s. Ground truth is shown on the left and prediction on the right, each with head-left, left-wrist, and right-wrist camera views.</p>
-            <p class="prediction-protocol">Pyramid Stacking corresponds to the task discussed in the paper’s additional-backbone evaluation. Nested Cup Stacking and Steak Cooking are supplementary prediction examples outside that evaluation. All three examples use the learned fast-weight initialization, without additional human-video adaptation, and retain the original prediction target times.</p>
             <div class="prediction-list">
                 <article class="paired-task-card prediction-card">
                     <h3>Pyramid Stacking</h3>
