@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preload" as="image" href="images/wam_overview.webp" fetchpriority="high">
     <link rel="preload" as="image" href="images/wam_pipeline.webp" fetchpriority="high">
-    <link rel="stylesheet" href="style.css?v=mobile-layout-1">
+    <link rel="stylesheet" href="style.css?v=dino-decode-1">
     <script src="image-preview.js?v=1"></script>
     <script src="video-preview.js?v=5" defer></script>
     <script src="citation.js?v=1" defer></script>
@@ -459,6 +459,41 @@
                     <div class="paired-video-label">DINOv3 Feature Visualization</div>
                     <video class="paired-video" controls playsinline preload="none" loading="lazy" aria-label="DINOv3 feature visualization of Cook Rice human and robot motions" poster="/images/posters/analysis/cook_rice_dinov3_features.jpg?v=first-frame"><source src="/videos/analysis/cook_rice_dinov3_features.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
                 </div>
+            </div>
+        </section>
+
+        <section id="dino-feature-prediction" aria-labelledby="dino-feature-prediction-heading">
+            <h2 id="dino-feature-prediction-heading">Video Prediction in DINO Feature Space</h2>
+            <p class="section-intro">Three robot tasks are shown as GT RGB, WAM DINO PCA, and WAM DINO Decode. The latter two columns visualize the same predicted DINO features through PCA projection and DINO decoding, respectively.</p>
+            <p class="prediction-protocol">Predictions use the LDA-based WAM without additional test-time adaptation, conditioned on the current ground-truth observation. Both prediction columns are advanced by 16 frames (1.6 s) for visual alignment only. These clips illustrate feature predictions qualitatively rather than measure future-prediction accuracy.</p>
+            <div class="prediction-list">
+                <article class="paired-task-card prediction-card">
+                    <h3>Pyramid Stacking</h3>
+                    <div class="prediction-comparison-scroll" tabindex="0" role="region" aria-label="Scrollable Pyramid Stacking DINO prediction comparison">
+                        <div class="prediction-comparison feature-prediction-comparison">
+                            <video class="prediction-video feature-prediction-video" width="768" height="320" controls playsinline preload="none" loading="lazy" aria-label="Pyramid Stacking: GT RGB, WAM DINO PCA, and WAM DINO Decode" poster="/images/posters/prediction/lda/pyramid_stacking.jpg"><source src="/videos/prediction/lda/pyramid_stacking.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                        </div>
+                    </div>
+                    <p class="prediction-scroll-hint">Swipe to compare all three columns. <a href="/videos/prediction/lda/pyramid_stacking.mp4" target="_blank" rel="noopener noreferrer">Open video &#8599;</a></p>
+                </article>
+                <article class="paired-task-card prediction-card">
+                    <h3>Nested Cup Stacking</h3>
+                    <div class="prediction-comparison-scroll" tabindex="0" role="region" aria-label="Scrollable Nested Cup Stacking DINO prediction comparison">
+                        <div class="prediction-comparison feature-prediction-comparison">
+                            <video class="prediction-video feature-prediction-video" width="768" height="320" controls playsinline preload="none" loading="lazy" aria-label="Nested Cup Stacking: GT RGB, WAM DINO PCA, and WAM DINO Decode" poster="/images/posters/prediction/lda/nested_cup_stacking.jpg"><source src="/videos/prediction/lda/nested_cup_stacking.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                        </div>
+                    </div>
+                    <p class="prediction-scroll-hint">Swipe to compare all three columns. <a href="/videos/prediction/lda/nested_cup_stacking.mp4" target="_blank" rel="noopener noreferrer">Open video &#8599;</a></p>
+                </article>
+                <article class="paired-task-card prediction-card">
+                    <h3>Steak Cooking</h3>
+                    <div class="prediction-comparison-scroll" tabindex="0" role="region" aria-label="Scrollable Steak Cooking DINO prediction comparison">
+                        <div class="prediction-comparison feature-prediction-comparison">
+                            <video class="prediction-video feature-prediction-video" width="768" height="320" controls playsinline preload="none" loading="lazy" aria-label="Steak Cooking: GT RGB, WAM DINO PCA, and WAM DINO Decode" poster="/images/posters/prediction/lda/steak_cooking.jpg"><source src="/videos/prediction/lda/steak_cooking.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+                        </div>
+                    </div>
+                    <p class="prediction-scroll-hint">Swipe to compare all three columns. <a href="/videos/prediction/lda/steak_cooking.mp4" target="_blank" rel="noopener noreferrer">Open video &#8599;</a></p>
+                </article>
             </div>
         </section>
 

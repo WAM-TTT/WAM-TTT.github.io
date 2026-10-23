@@ -1020,3 +1020,9 @@ footer {
     footer { margin-top: 40px; padding: 24px 0; font-size: 12px; }
     footer a { overflow-wrap: anywhere; }
 }
+
+/* Preserve the three feature views at their native aspect ratio. */
+.feature-prediction-video { aspect-ratio: 12 / 5; }
+@media (max-width: 600px) {
+    .feature-prediction-comparison { min-width: 768px; }
+}
