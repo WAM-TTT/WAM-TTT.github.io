@@ -19,7 +19,7 @@ function setup(connection = {}) {
   }
   const videos=Array.from({length:6},(_,i)=>new Video(i));
   const document=new Element();document.hidden=false;document.querySelectorAll=()=>videos;document.createElement=()=>new Element();
-  const context={document,navigator:{connection},window:{innerHeight:700},HTMLMediaElement:{NETWORK_EMPTY:0},IntersectionObserver:class {constructor(cb){this.cb=cb;observers.push(this);}observe(){}},requestAnimationFrame:fn=>frames.push(fn),setTimeout:fn=>{const id=Symbol();timers.set(id,fn);return id;},clearTimeout:id=>timers.delete(id),console};
+  const context={document,navigator:{connection},window:{innerHeight:700},HTMLMediaElement:{NETWORK_EMPTY:0,NETWORK_IDLE:1},IntersectionObserver:class {constructor(cb){this.cb=cb;observers.push(this);}observe(){}},requestAnimationFrame:fn=>frames.push(fn),setTimeout:fn=>{const id=Symbol();timers.set(id,fn);return id;},clearTimeout:id=>timers.delete(id),console};
   context.window.IntersectionObserver = context.IntersectionObserver;
   vm.runInNewContext(source,context);
   const flush=()=>{while(frames.length)frames.shift()();};
@@ -47,4 +47,8 @@ console.log('PASS: data-saving connections skip speculative loading but allow ex
 
 {
  const t=setup();t.enter(t.videos);t.videos[0].play();t.flush();t.videos[0].paused=true;t.videos[0].emit('error');t.flush();assert.equal(t.videos.filter(v=>v.preload==='auto'&&v!==t.videos[0]).length,2);console.log('PASS: a failed playback does not block other preloads');
+}
+
+{
+ const t=setup();t.enter(t.videos);t.videos[0].networkState=2;t.videos[0].ready();t.flush();assert.equal(t.videos[2].loads,0,'do not start another transfer while the previous range request is still running');t.videos[0].networkState=1;t.videos[0].emit('suspend');t.flush();assert.equal(t.videos[2].loads,1);console.log('PASS: slot remains occupied until the browser stops fetching');
 }

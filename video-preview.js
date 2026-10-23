@@ -169,10 +169,21 @@ document.querySelectorAll('video[poster]').forEach((video) => {
 
     const finishWarmup = () => {
         if (warmingVideos.has(video) && hasStartupBuffer(video)) {
+            video.preload = 'none';
+            // A browser may finish its current byte-range request despite this
+            // hint. Keep the slot until it really stops fetching.
+            if (video.networkState === HTMLMediaElement.NETWORK_IDLE) {
+                stopWarmup(video);
+                scheduleWarmups();
+            }
+        }
+    };
+    video.addEventListener('suspend', () => {
+        if (warmingVideos.has(video)) {
             stopWarmup(video);
             scheduleWarmups();
         }
-    };
+    });
     video.addEventListener('progress', finishWarmup);
     video.addEventListener('canplay', finishWarmup);
     video.addEventListener('error', () => {
