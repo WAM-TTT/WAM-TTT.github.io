@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preload" as="image" href="images/wam_overview.webp" fetchpriority="high">
     <link rel="preload" as="image" href="images/wam_pipeline.webp" fetchpriority="high">
-    <link rel="stylesheet" href="style.css?v=paper-terminology">
+    <link rel="stylesheet" href="style.css?v=mobile-layout-1">
     <script src="image-preview.js?v=1"></script>
     <script src="video-preview.js?v=5" defer></script>
     <script src="citation.js?v=1" defer></script>
@@ -160,7 +160,7 @@
             <div class="two-column-grid">
                 <div class="column-item">
                     <h3>Protocol Components</h3>
-                    <div class="result-table-wrap compact-table-wrap">
+                    <div class="result-table-wrap compact-table-wrap" tabindex="0" role="region" aria-label="Protocol component results">
                         <table class="result-table compact-table">
                             <thead>
                                 <tr><th>Method</th><th>Table Bussing</th><th>Swap Place</th></tr>
@@ -180,7 +180,7 @@
                 </div>
                 <div class="column-item">
                     <h3>Robot-Human Data Ratio</h3>
-                    <div class="result-table-wrap compact-table-wrap">
+                    <div class="result-table-wrap compact-table-wrap" tabindex="0" role="region" aria-label="Robot and human data ratio results">
                         <table class="result-table compact-table">
                             <thead>
                                 <tr><th>Robot / Human</th><th>3-task Avg.</th></tr>
@@ -232,7 +232,8 @@
                 </div>
             </div>
 
-            <div class="result-table-wrap main-results-table-wrap">
+            <p class="table-scroll-hint">Swipe horizontally to view all task results.</p>
+            <div class="result-table-wrap main-results-table-wrap" tabindex="0" role="region" aria-label="Full benchmark results">
                 <table class="result-table full-results-table">
                     <thead>
                         <tr>
@@ -467,18 +468,33 @@
             <div class="prediction-list">
                 <article class="paired-task-card prediction-card">
                     <h3>Pyramid Stacking</h3>
-                    <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
-                    <video class="prediction-video" width="1536" height="256" controls playsinline preload="none" loading="lazy" aria-label="Pyramid Stacking FastWAM-based video prediction comparison" poster="/images/posters/prediction/pyramid_stacking.jpg?v=clean"><source src="/videos/prediction/pyramid_stacking.mp4?v=clean" type="video/mp4">Your browser does not support HTML5 video.</video>
+                    <div class="prediction-comparison-scroll" tabindex="0" role="region" aria-label="Scrollable ground truth and prediction comparison">
+                        <div class="prediction-comparison">
+                            <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
+                            <video class="prediction-video" width="1536" height="256" controls playsinline preload="none" loading="lazy" aria-label="Pyramid Stacking FastWAM-based video prediction comparison" poster="/images/posters/prediction/pyramid_stacking.jpg?v=clean"><source src="/videos/prediction/pyramid_stacking.mp4?v=clean" type="video/mp4">Your browser does not support HTML5 video.</video>
+                        </div>
+                    </div>
+                    <p class="prediction-scroll-hint">Swipe to compare camera views. <a href="/videos/prediction/pyramid_stacking.mp4?v=clean" target="_blank" rel="noopener noreferrer">Open video &#8599;</a></p>
                 </article>
                 <article class="paired-task-card prediction-card">
                     <h3>Nested Cup Stacking</h3>
-                    <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
-                    <video class="prediction-video" width="1536" height="256" controls playsinline preload="none" loading="lazy" aria-label="Nested Cup Stacking FastWAM-based video prediction comparison" poster="/images/posters/prediction/cup_stacking.jpg?v=clean"><source src="/videos/prediction/cup_stacking.mp4?v=clean" type="video/mp4">Your browser does not support HTML5 video.</video>
+                    <div class="prediction-comparison-scroll" tabindex="0" role="region" aria-label="Scrollable ground truth and prediction comparison">
+                        <div class="prediction-comparison">
+                            <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
+                            <video class="prediction-video" width="1536" height="256" controls playsinline preload="none" loading="lazy" aria-label="Nested Cup Stacking FastWAM-based video prediction comparison" poster="/images/posters/prediction/cup_stacking.jpg?v=clean"><source src="/videos/prediction/cup_stacking.mp4?v=clean" type="video/mp4">Your browser does not support HTML5 video.</video>
+                        </div>
+                    </div>
+                    <p class="prediction-scroll-hint">Swipe to compare camera views. <a href="/videos/prediction/cup_stacking.mp4?v=clean" target="_blank" rel="noopener noreferrer">Open video &#8599;</a></p>
                 </article>
                 <article class="paired-task-card prediction-card">
                     <h3>Steak Cooking</h3>
-                    <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
-                    <video class="prediction-video" width="1536" height="256" controls playsinline preload="none" loading="lazy" aria-label="Steak Cooking FastWAM-based video prediction comparison" poster="/images/posters/prediction/steak.jpg?v=clean"><source src="/videos/prediction/steak.mp4?v=clean" type="video/mp4">Your browser does not support HTML5 video.</video>
+                    <div class="prediction-comparison-scroll" tabindex="0" role="region" aria-label="Scrollable ground truth and prediction comparison">
+                        <div class="prediction-comparison">
+                            <div class="prediction-comparison-labels" aria-hidden="true"><span>Ground Truth</span><span>Model Prediction</span></div>
+                            <video class="prediction-video" width="1536" height="256" controls playsinline preload="none" loading="lazy" aria-label="Steak Cooking FastWAM-based video prediction comparison" poster="/images/posters/prediction/steak.jpg?v=clean"><source src="/videos/prediction/steak.mp4?v=clean" type="video/mp4">Your browser does not support HTML5 video.</video>
+                        </div>
+                    </div>
+                    <p class="prediction-scroll-hint">Swipe to compare camera views. <a href="/videos/prediction/steak.mp4?v=clean" target="_blank" rel="noopener noreferrer">Open video &#8599;</a></p>
                 </article>
             </div>
         </section>
